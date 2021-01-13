@@ -11,6 +11,7 @@ function signToken(payload, secret){
     return jwt.sign(payload, secret);
 }
 
+// Verificar token
 function verifyToken(token, secret){
     return jwt.verify(token, secret);
 }
