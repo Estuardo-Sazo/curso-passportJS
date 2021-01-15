@@ -1,10 +1,12 @@
 const boom = require('@hapi/boom');
 const joi = require('@hapi/joi');
 
+
 function validate(data, schema) {
-    const { error } = joi.object(schema).validate(data);
-    return error;
-}
+    const joiSchema = joi.object(schema)
+    const { error } = joiSchema.validate(data)
+    return error
+  }
 
 function validationHandler(schema, check = "body") {
     return function (req, res, next) {

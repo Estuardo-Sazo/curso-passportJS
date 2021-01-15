@@ -1,4 +1,3 @@
-const { query } = require('express');
 const MongoLib = require('../lib/mongo');
 class MoviesService {
 
