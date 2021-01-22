@@ -22,7 +22,7 @@ function authApi(app) {
   const usersService= new UsersService();
 
   //login
-  router.post('/sing-in', async function (req, res, next) {
+  router.post('/sign-in', async function (req, res, next) {
     const { apiKeyToken } = req.body;
 
     if (!apiKeyToken) {
@@ -65,7 +65,7 @@ function authApi(app) {
   });
 
   // sing up
-router.post('/sing-up',validationHandler(createUserSchema), async function (req, res, next){
+router.post('/sign-up',validationHandler(createUserSchema), async function (req, res, next){
     const { body :  user } = req;
       
     try {

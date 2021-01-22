@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { config } = require('./config/index');
+const morgan= require('morgan');
 
 const authApi= require('./routes/auth');
 const moviesApi= require('./routes/movies.js');
@@ -11,6 +12,7 @@ const notFoundHandler = require('./utils/middleware/noFoundHandler');
 
 //body parser
 app.use(express.json());
+app.use(morgan("dev"));
 
 authApi(app);
 moviesApi(app);
